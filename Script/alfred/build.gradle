@@ -1,0 +1,34 @@
+apply plugin: 'java'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.code.gson:gson:2.8.6'
+    testCompile 'junit:junit:4.12'
+}
+jar{
+    manifest{
+        attributes 'Main-Class':'com.charlezz.alfred.Main'
+    }
+    from{
+        configurations.compile.collect{
+            it.isDirectory()?it : zipTree(it)
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+
+jar.doLast {
+    println ("copy jar")
+
+    copy{
+        from 'build/libs/alfred.jar'
+        into "/Users/soohwan/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.9C328EBC-2AC8-41B4-90D2-55D7137C3794"
+    }
+}
