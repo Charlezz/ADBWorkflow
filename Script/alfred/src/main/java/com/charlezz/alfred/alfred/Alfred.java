@@ -45,8 +45,8 @@ public class Alfred {
     public void start(String[] args) {
         if (com.charlezz.alfred.util.Env.isDebugMode()) {
             logger.e("디버그 모드에만 진입하여 테스트 함");
-
-            args = new String[]{Workflow.CURRENT_ACTIVITY_INFO.name(), "22d0ad507d0d7ece"};
+//            args = new String[]{Workflow.INPUT_TEXT_STEP1.name(), "devices"};
+//            args = new String[]{Workflow.CURRENT_ACTIVITY_INFO.name(), "22d0ad507d0d7ece"};
 //            args = new String[]{"debug_layout" ,"22d0ad507d0d7ece"};
 //            args = new String[]{Workflow.DEVICE_LIST.name()};
 //            args = new String[]{CommandType.INPUT_TEXT_STEP1.name(), "안녕, 찰스"};
@@ -79,6 +79,4 @@ public class Alfred {
             e.printStackTrace();
         }
     }
-
-
 }

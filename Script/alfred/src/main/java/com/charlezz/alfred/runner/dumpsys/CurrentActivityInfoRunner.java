@@ -36,6 +36,10 @@ public class CurrentActivityInfoRunner implements Runner {
                         currentFocus = currentFocus.replace("/","");
                         currentFocus = currentFocus.replace("}","");
                     }
+
+                    if(currentFocus.isEmpty()){
+                        currentFocus = "액티비티 정보를 가져오는데 실패했습니다.";
+                    }
                     logger.i("currentFocus = "+currentFocus);
                     Item item = new Item(model, currentFocus, id);
                     items.add(item);
