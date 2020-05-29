@@ -8,6 +8,9 @@ public class RunnerResult {
         this.isSuccess = isSuccess;
         this.message = message;
     }
+    public RunnerResult(boolean isSuccess){
+        this(isSuccess, "");
+    }
 
     public boolean isSuccess() {
         return isSuccess;

@@ -29,6 +29,6 @@ jar.doLast {
 
     copy{
         from 'build/libs/alfred.jar'
-        into "/Users/soohwan/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.9C328EBC-2AC8-41B4-90D2-55D7137C3794"
+        into "/Users/charles/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.8787C340-A522-4003-821B-A0072660D331"
     }
 }

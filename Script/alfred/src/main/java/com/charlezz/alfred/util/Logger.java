@@ -14,7 +14,7 @@ public class Logger {
 
 
     public void i(String msg){
-        if(Env.isDebugMode()){
+        if(Env.isUnitTestMode()){
             System.out.println(String.format("%s: %s", tag, msg));
         }
     }

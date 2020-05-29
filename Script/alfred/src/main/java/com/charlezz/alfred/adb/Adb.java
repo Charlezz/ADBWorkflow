@@ -8,7 +8,9 @@ public class Adb {
         M_CURRENT_ACTIVITIY_INFO("adb -s %s shell dumpsys window windows | grep -E 'mCurrentFocus'"),
         DEVICES_L("adb devices -l"),
         DEVICES("adb devices"),
-        INPUT_TEXT("adb -s %s shell input text %s");
+        INPUT_TEXT("adb -s %s shell input text %s"),
+        GET_DO_KEEP_ACTIVITIES("adb -s %s shell settings get global always_finish_activities"),
+        DONT_KEEP_ACTIVITIES("adb -s %1$s shell settings put global always_finish_activities %2$s");
 
         private String cmd;
 

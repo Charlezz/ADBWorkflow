@@ -1,12 +1,12 @@
 package com.charlezz.alfred.adb;
 
-import com.charlezz.alfred.util.Env;
-import com.charlezz.alfred.util.Logger;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Map;
+
+import com.charlezz.alfred.util.Env;
+import com.charlezz.alfred.util.Logger;
 
 public class AdbHandler {
     public static String start(String command) {
@@ -16,7 +16,7 @@ public class AdbHandler {
             Map<String, String> env = pb.environment();
             String sdkPath = env.get(Env.ADB_PATH);
             String cmd;
-            if (Env.isDebugMode()) {
+            if (Env.isUnitTestMode()) {
                 cmd = command; //로컬 테스트 목적
             } else {
                 cmd = sdkPath + File.separator + command;

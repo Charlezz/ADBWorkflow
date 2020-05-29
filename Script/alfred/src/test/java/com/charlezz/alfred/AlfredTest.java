@@ -1,13 +1,14 @@
 package com.charlezz.alfred;
 
-import com.charlezz.alfred.alfred.Alfred;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import com.charlezz.alfred.alfred.Alfred;
 
 public class AlfredTest {
 
     private Alfred alfred;
+    private String deviceId = "22d0ad507d0d7ece";//디바이스 아이디 S9
 
     @Before
     public void setUpAlfred() {
@@ -15,10 +16,8 @@ public class AlfredTest {
     }
 
     @Test
-    public void firstTest() {
-//        String[] args = new String[]{Alfred.Workflow.CURRENT_ACTIVITY_INFO.name()};
-//        String[] args = new String[]{Alfred.Workflow.INPUT_TEXT_STEP1.name(), "안녕, 찰스"};
-        String[] args = new String[]{Alfred.Workflow.INPUT_TEXT_STEP2.name(), "eyJpZCI6IjIyZDBhZDUwN2QwZDdlY2UiLCJtc2ciOiLslYjrhZUsIOywsOyKpCJ9"};
+    public void toggleKeepActivitiesTest(){
+        String[] args = new String[]{Alfred.Workflow.TOGGLE_KEEP_ACTIVITIES.name(), deviceId};
         alfred.start(args);
     }
 
